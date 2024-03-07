@@ -1,0 +1,132 @@
+imaging_specs:
+  instrument_type: exaSPIM
+  local_storage_directory: E:\
+  external_storage_directory: Z:\exaSPIM
+  subject_id: '696140'
+  tile_prefix: tile
+  tile_overlap_x_percent: 15
+  tile_overlap_y_percent: 15
+  z_step_size_um: 1
+  volume_x_um: 26000
+  volume_y_um: 12000
+  volume_z_um: 16384
+  slit_width_pixels: 360.0
+  laser_wavelengths:
+  - 561
+design_specs:
+  slit_width_pixels: 480.0
+waveform_specs:
+  ttl_pulse_time_s: 0.01
+  frame_rest_time_s: 0.05
+experiment_specs:
+  experimenters_name: Adam Glaser
+  immersion_medium: 0.10x SSC
+  immersion_medium_refractive_index: 1.33
+  x_anatomical_direction: Anterior_to_posterior
+  y_anatomical_direction: Superior_to_inferior
+  z_anatomical_direction: Right_to_left
+tile_specs:
+  x_field_of_view_um: 10615.616
+  y_field_of_view_um: 7958.72
+  row_count_pixels: 10640
+  column_count_pixels: 14192
+  data_type: uint16
+compressor_specs:
+  image_stack_chunk_size: 64
+  compressor_thread_count: 32
+  compression_style: lz4
+file_transfer_specs:
+  protocol: xcopy
+  protocol_flags: /j/i/y
+camera_specs:
+  egrabber_frame_buffer: 8
+  unpacking_mode: Msb
+  digital_gain_adu: 1
+  line_interval_us: 45.44
+sample_stage_specs:
+  backlash_reset_distance_um: 4
+daq_driver_kwds:
+  dev_name: Dev1
+  samples_per_sec: 10000.0
+  livestream_frequency_hz: 1.5
+  ao_channels:
+    etl: 1
+    camera: 2
+    stage: 0
+    laser_488: 5
+    laser_638: 3
+    laser_561: 4
+tiger_controller_driver_kwds:
+  com_port: COM3
+joystick_kwds:
+  axis_map:
+    x: 2
+    y: 3
+    z: 22
+    n: 23
+sample_pose_kwds:
+  axis_map:
+    x: y
+    y: z
+    z: x
+channel_specs:
+  '488':
+    kwds:
+      wl: '488'
+      cfg: self.cfg
+    driver: exaspim.devices.aotf_laser
+    module: AOTFLaser
+    color: blue
+    hex_color: '#00ff92'
+    ao_channel: 3
+    ao_voltage: 10.0
+    ttl_pulse_time_s: 0.01
+    frame_rest_time_s: 0.05
+    etl:
+      amplitude: 0.078
+      offset: 2.4583333333333335
+      nonlinear: 0.0
+      interp_time_s: 0.50
+      buffer_time_s: 0.05
+    binning: 1
+    focus_position: -3218
+  '561':
+    kwds:
+      wl: '561'
+      cfg: self.cfg
+    driver: exaspim.devices.aotf_laser
+    module: AOTFLaser
+    color: yellowgreen
+    hex_color: '#c6ff00'
+    ao_channel: 5
+    ao_voltage: 3.25
+    ttl_pulse_time_s: 0.01
+    frame_rest_time_s: 0.05
+    etl:
+      amplitude: 0.07666666666666666
+      offset: 2.4903333333333335
+      nonlinear: 0.0
+      interp_time_s: 0.50
+      buffer_time_s: 0.05
+    binning: 1
+    focus_position: -3271
+  '638':
+    kwds:
+      wl: '638'
+      cfg: self.cfg
+    driver: exaspim.devices.aotf_laser
+    module: AOTFLaser
+    color: red
+    hex_color: '#000000'
+    ao_channel: 4
+    ao_voltage: 10.0
+    ttl_pulse_time_s: 0.01
+    frame_rest_time_s: 0.05
+    etl:
+      amplitude: 0.07666666666666666
+      offset: 2.4396666666666667
+      nonlinear: 0.0
+      interp_time_s: 0.50
+      buffer_time_s: 0.05
+    binning: 8
+    focus_position: -3200

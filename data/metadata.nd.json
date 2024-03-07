@@ -1,0 +1,151 @@
+{
+   "describedBy": "https://raw.githubusercontent.com/AllenNeuralDynamics/aind-data-schema/main/src/aind_data_schema/metadata.py",
+   "schema_version": "0.0.6",
+   "_id": "09d21f89-91fc-4939-b04d-15ae00174efb",
+   "name": "exaSPIM_696140_2024-02-04_11-17-50",
+   "created": "2024-02-05T21:28:50.537926",
+   "last_modified": "2024-02-05T21:28:50.537931",
+   "location": "aind-open-data",
+   "metadata_status": "Invalid",
+   "external_links": [],
+   "subject": {
+      "describedBy": "https://raw.githubusercontent.com/AllenNeuralDynamics/aind-data-schema/main/src/aind_data_schema/subject.py",
+      "schema_version": "0.4.2",
+      "species": {
+         "name": "Mus musculus",
+         "abbreviation": null,
+         "registry": {
+            "name": "National Center for Biotechnology Information",
+            "abbreviation": "NCBI"
+         },
+         "registry_identifier": "10090"
+      },
+      "subject_id": "696140",
+      "sex": "Female",
+      "date_of_birth": "2023-07-30",
+      "genotype": "Slc17a6-IRES-Cre/wt",
+      "mgi_allele_ids": null,
+      "background_strain": null,
+      "source": null,
+      "rrid": null,
+      "restrictions": null,
+      "breeding_group": "Slc17a6-IRES-Cre(ND)",
+      "maternal_id": "678734",
+      "maternal_genotype": "wt/wt",
+      "paternal_id": "667661",
+      "paternal_genotype": "Slc17a6-IRES-Cre/wt",
+      "wellness_reports": null,
+      "housing": null,
+      "notes": null
+   },
+   "data_description": {
+      "describedBy": "https://raw.githubusercontent.com/AllenNeuralDynamics/aind-data-schema/main/src/aind_data_schema/data_description.py",
+      "schema_version": "0.10.2",
+      "license": "CC-BY-4.0",
+      "creation_time": "2024-02-04T11:17:50",
+      "name": "exaSPIM_696140_2024-02-04_11-17-50",
+      "institution": {
+         "name": "Allen Institute for Neural Dynamics",
+         "abbreviation": "AIND",
+         "registry": {
+            "name": "Research Organization Registry",
+            "abbreviation": "ROR"
+         },
+         "registry_identifier": "04szwah67"
+      },
+      "funding_source": [
+         {
+            "funder": {
+               "name": "Allen Institute for Neural Dynamics",
+               "abbreviation": "AIND",
+               "registry": {
+                  "name": "Research Organization Registry",
+                  "abbreviation": "ROR"
+               },
+               "registry_identifier": "04szwah67"
+            },
+            "grant_number": null,
+            "fundee": null
+         }
+      ],
+      "data_level": "raw",
+      "group": null,
+      "investigators": [],
+      "platform": {
+         "name": "ExaSPIM platform",
+         "abbreviation": "exaSPIM"
+      },
+      "project_name": null,
+      "restrictions": null,
+      "modality": [
+         {
+            "name": "Selective plane illumination microscopy",
+            "abbreviation": "SPIM"
+         }
+      ],
+      "subject_id": "696140",
+      "related_data": [],
+      "data_summary": null
+   },
+   "procedures": {
+      "describedBy": "https://raw.githubusercontent.com/AllenNeuralDynamics/aind-data-schema/main/src/aind_data_schema/procedures.py",
+      "schema_version": "0.9.3",
+      "subject_id": "696140",
+      "subject_procedures": [
+         {
+            "start_date": "2023-09-05",
+            "end_date": "2023-09-05",
+            "experimenter_full_name": 13040,
+            "iacuc_protocol": "2109",
+            "animal_weight_prior": null,
+            "animal_weight_post": null,
+            "weight_unit": "gram",
+            "anaesthesia": null,
+            "notes": null,
+            "injection_materials": null,
+            "recovery_time": null,
+            "recovery_time_unit": "minute",
+            "injection_duration": null,
+            "injection_duration_unit": "minute",
+            "workstation_id": null,
+            "instrument_id": null,
+            "procedure_type": "Retro-orbital injection",
+            "injection_volume_unit": "microliter"
+         },
+         {
+            "start_date": "2023-10-09",
+            "end_date": "2023-10-09",
+            "experimenter_full_name": 13040,
+            "iacuc_protocol": "2109",
+            "animal_weight_prior": null,
+            "animal_weight_post": null,
+            "weight_unit": "gram",
+            "anaesthesia": null,
+            "notes": null,
+            "procedure_type": "Perfusion",
+            "output_specimen_ids": [
+               696140
+            ]
+         }
+      ],
+      "specimen_procedures": [],
+      "notes": null
+   },
+   "session": null,
+   "rig": null,
+   "processing": {
+      "describedBy": "https://raw.githubusercontent.com/AllenNeuralDynamics/aind-data-schema/main/src/aind_data_schema/processing.py",
+      "schema_version": "0.3.1",
+      "processing_pipeline": {
+         "data_processes": [],
+         "processor_full_name": "service",
+         "pipeline_version": null,
+         "pipeline_url": null,
+         "note": null
+      },
+      "analyses": null,
+      "notes": null
+   },
+   "acquisition": null,
+   "instrument": null
+}

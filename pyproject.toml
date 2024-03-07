@@ -1,13 +1,28 @@
 [build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
 [project]
 name = "exaspim_main"
 authors = [{name = "Micah Woodard", email = "micah.woodard@alleninstitute.org"}]
-version = "0.0.1"
-dynamic = ["description"]
+dynamic = ["description", "version"]
 description-file='README.md'
 dependencies = [
-    'pyserial'
+    'pyserial',
+    "aind-data-schema @ git+https://github.com/HaissLab-Exaspim/aind-data-schema.git",
+    "exaspim @ git+https://github.com/HaissLab-Exaspim/exa-spim-control.git",
+    "napari>=0.4.19.post1",
+    "pyqtgraph>=0.13.3",
+    "pip>=24.0",
+    "opencv-python>=4.9.0.80",
+    "numpy-stl>=3.1.1",
+    "scikit-tensor-py3>=0.2.1",
 ]
+requires-python = "==3.9.*"
+
+[tool.pdm.version]
+source = "file"
+path = "src/exaspim_main/__init__.py"
+
+[project.scripts]
+exaspim-ui = "exaspim_main.main:run_ui"

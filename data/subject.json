@@ -1,0 +1,30 @@
+{
+   "describedBy": "https://raw.githubusercontent.com/AllenNeuralDynamics/aind-data-schema/main/src/aind_data_schema/subject.py",
+   "schema_version": "0.4.2",
+   "species": {
+      "name": "Mus musculus",
+      "abbreviation": null,
+      "registry": {
+         "name": "National Center for Biotechnology Information",
+         "abbreviation": "NCBI"
+      },
+      "registry_identifier": "10090"
+   },
+   "subject_id": "696140",
+   "sex": "Female",
+   "date_of_birth": "2023-07-30",
+   "genotype": "Slc17a6-IRES-Cre/wt",
+   "mgi_allele_ids": null,
+   "background_strain": null,
+   "source": null,
+   "rrid": null,
+   "restrictions": null,
+   "breeding_group": "Slc17a6-IRES-Cre(ND)",
+   "maternal_id": "678734",
+   "maternal_genotype": "wt/wt",
+   "paternal_id": "667661",
+   "paternal_genotype": "Slc17a6-IRES-Cre/wt",
+   "wellness_reports": null,
+   "housing": null,
+   "notes": null
+}

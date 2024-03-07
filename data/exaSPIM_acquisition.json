@@ -1,0 +1,281 @@
+{
+   "describedBy": "https://raw.githubusercontent.com/AllenNeuralDynamics/aind-data-schema/main/src/aind_data_schema/imaging/acquisition.py",
+   "schema_version": "0.5.2",
+   "experimenter_full_name": [
+      "Adam Glaser"
+   ],
+   "specimen_id": "696140",
+   "subject_id": "696140",
+   "instrument_id": "exaspim-01",
+   "calibrations": null,
+   "maintenance": null,
+   "session_start_time": "2024-02-04T11:17:51",
+   "session_end_time": "2024-02-05T03:51:31",
+   "session_type": null,
+   "tiles": [
+      {
+         "coordinate_transformations": [
+            {
+               "type": "scale",
+               "scale": [
+                  0.748,
+                  0.748,
+                  1
+               ]
+            },
+            {
+               "type": "translation",
+               "translation": [
+                  0.0,
+                  6.764912000000001,
+                  0.0
+               ]
+            }
+         ],
+         "file_name": "tile_x_0000_y_0000_z_0000_ch_561.ims",
+         "channel": {
+            "channel_name": "561",
+            "light_source_name": "561",
+            "filter_names": [],
+            "detector_name": "",
+            "additional_device_names": null,
+            "excitation_wavelength": 561,
+            "excitation_wavelength_unit": "nanometer",
+            "excitation_power": 1000.0,
+            "excitation_power_unit": "milliwatt",
+            "filter_wheel_index": 0,
+            "dilation": null,
+            "dilation_unit": "pixel",
+            "description": null
+         },
+         "notes": null,
+         "imaging_angle": 0,
+         "imaging_angle_unit": "degrees"
+      },
+      {
+         "coordinate_transformations": [
+            {
+               "type": "scale",
+               "scale": [
+                  0.748,
+                  0.748,
+                  1
+               ]
+            },
+            {
+               "type": "translation",
+               "translation": [
+                  0.0,
+                  0.0,
+                  0.0
+               ]
+            }
+         ],
+         "file_name": "tile_x_0000_y_0001_z_0000_ch_561.ims",
+         "channel": {
+            "channel_name": "561",
+            "light_source_name": "561",
+            "filter_names": [],
+            "detector_name": "",
+            "additional_device_names": null,
+            "excitation_wavelength": 561,
+            "excitation_wavelength_unit": "nanometer",
+            "excitation_power": 1000.0,
+            "excitation_power_unit": "milliwatt",
+            "filter_wheel_index": 0,
+            "dilation": null,
+            "dilation_unit": "pixel",
+            "description": null
+         },
+         "notes": null,
+         "imaging_angle": 0,
+         "imaging_angle_unit": "degrees"
+      },
+      {
+         "coordinate_transformations": [
+            {
+               "type": "scale",
+               "scale": [
+                  0.748,
+                  0.748,
+                  1
+               ]
+            },
+            {
+               "type": "translation",
+               "translation": [
+                  9.023273600000001,
+                  6.764912000000001,
+                  0.0
+               ]
+            }
+         ],
+         "file_name": "tile_x_0001_y_0000_z_0000_ch_561.ims",
+         "channel": {
+            "channel_name": "561",
+            "light_source_name": "561",
+            "filter_names": [],
+            "detector_name": "",
+            "additional_device_names": null,
+            "excitation_wavelength": 561,
+            "excitation_wavelength_unit": "nanometer",
+            "excitation_power": 1000.0,
+            "excitation_power_unit": "milliwatt",
+            "filter_wheel_index": 0,
+            "dilation": null,
+            "dilation_unit": "pixel",
+            "description": null
+         },
+         "notes": null,
+         "imaging_angle": 0,
+         "imaging_angle_unit": "degrees"
+      },
+      {
+         "coordinate_transformations": [
+            {
+               "type": "scale",
+               "scale": [
+                  0.748,
+                  0.748,
+                  1
+               ]
+            },
+            {
+               "type": "translation",
+               "translation": [
+                  9.023273600000001,
+                  0.0,
+                  0.0
+               ]
+            }
+         ],
+         "file_name": "tile_x_0001_y_0001_z_0000_ch_561.ims",
+         "channel": {
+            "channel_name": "561",
+            "light_source_name": "561",
+            "filter_names": [],
+            "detector_name": "",
+            "additional_device_names": null,
+            "excitation_wavelength": 561,
+            "excitation_wavelength_unit": "nanometer",
+            "excitation_power": 1000.0,
+            "excitation_power_unit": "milliwatt",
+            "filter_wheel_index": 0,
+            "dilation": null,
+            "dilation_unit": "pixel",
+            "description": null
+         },
+         "notes": null,
+         "imaging_angle": 0,
+         "imaging_angle_unit": "degrees"
+      },
+      {
+         "coordinate_transformations": [
+            {
+               "type": "scale",
+               "scale": [
+                  0.748,
+                  0.748,
+                  1
+               ]
+            },
+            {
+               "type": "translation",
+               "translation": [
+                  18.046547200000003,
+                  6.764912000000001,
+                  0.0
+               ]
+            }
+         ],
+         "file_name": "tile_x_0002_y_0000_z_0000_ch_561.ims",
+         "channel": {
+            "channel_name": "561",
+            "light_source_name": "561",
+            "filter_names": [],
+            "detector_name": "",
+            "additional_device_names": null,
+            "excitation_wavelength": 561,
+            "excitation_wavelength_unit": "nanometer",
+            "excitation_power": 1000.0,
+            "excitation_power_unit": "milliwatt",
+            "filter_wheel_index": 0,
+            "dilation": null,
+            "dilation_unit": "pixel",
+            "description": null
+         },
+         "notes": null,
+         "imaging_angle": 0,
+         "imaging_angle_unit": "degrees"
+      },
+      {
+         "coordinate_transformations": [
+            {
+               "type": "scale",
+               "scale": [
+                  0.748,
+                  0.748,
+                  1
+               ]
+            },
+            {
+               "type": "translation",
+               "translation": [
+                  18.046547200000003,
+                  0.0,
+                  0.0
+               ]
+            }
+         ],
+         "file_name": "tile_x_0002_y_0001_z_0000_ch_561.ims",
+         "channel": {
+            "channel_name": "561",
+            "light_source_name": "561",
+            "filter_names": [],
+            "detector_name": "",
+            "additional_device_names": null,
+            "excitation_wavelength": 561,
+            "excitation_wavelength_unit": "nanometer",
+            "excitation_power": 1000.0,
+            "excitation_power_unit": "milliwatt",
+            "filter_wheel_index": 0,
+            "dilation": null,
+            "dilation_unit": "pixel",
+            "description": null
+         },
+         "notes": null,
+         "imaging_angle": 0,
+         "imaging_angle_unit": "degrees"
+      }
+   ],
+   "axes": [
+      {
+         "name": "X",
+         "dimension": 2,
+         "direction": "Anterior_to_posterior",
+         "unit": "micrometer"
+      },
+      {
+         "name": "Y",
+         "dimension": 1,
+         "direction": "Superior_to_inferior",
+         "unit": "micrometer"
+      },
+      {
+         "name": "Z",
+         "dimension": 0,
+         "direction": "Right_to_left",
+         "unit": "micrometer"
+      }
+   ],
+   "chamber_immersion": {
+      "medium": "0.10x SSC",
+      "refractive_index": 1.33
+   },
+   "sample_immersion": null,
+   "active_objectives": null,
+   "local_storage_directory": "E:\\exaSPIM_696140_2024-02-04_11-17-50\\exaSPIM",
+   "external_storage_directory": "Z:\\exaSPIM\\exaSPIM_696140_2024-02-04_11-17-50\\exaSPIM",
+   "processing_steps": null,
+   "notes": null
+}
