@@ -17,9 +17,9 @@ end_tile_index = 14
 experimenters_name = "John Rohde"
 immersion_medium = "0.05X SSC"
 immersion_medium_refractive_index = 1.33
-x_anatomical_direction = "Posterior_to_anterior"
-y_anatomical_direction = "Inferior_to_superior"
-z_anatomical_direction = "Right_to_left"
+x_anatomical_direction = ""
+y_anatomical_direction = ""
+z_anatomical_direction = ""
 
 [design_specs]
 slit_width_pixels = 480.0
@@ -61,9 +61,6 @@ livestream_frequency_hz = 15
 [motion_control]
 simulated = true
 
-[motion_control.driver_kwds]
-com_port = "COM3"
-
 [estimates]
 
 [daq_driver_kwds.ao_channels]
@@ -76,6 +73,9 @@ stage = 0
 405 = 6
 galvo_a = 17
 galvo_b = 19
+
+[motion_control.driver_kwds]
+com_port = "COM3"
 
 [channel_specs.488]
 driver = "exaspim.devices.aotf_laser"
@@ -91,7 +91,7 @@ module = "AOTFLaser"
 color = "yellowgreen"
 hex_color = "#c6ff00"
 ao_channel = 5
-ao_voltage = 10.0
+ao_voltage = 2.33
 
 [channel_specs.405]
 driver = "exaspim.devices.aotf_laser"

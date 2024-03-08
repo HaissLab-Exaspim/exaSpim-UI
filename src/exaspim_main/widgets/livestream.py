@@ -69,7 +69,9 @@ class Livestream(WidgetBase):
             / self.cfg.sensor_row_count,
         ]
 
-        self.instrument._setup_waveform_hardware(self.cfg.channels, live=True)  # before : self.cfg.channels[0]
+        self.instrument._setup_waveform_hardware(
+            self.cfg.channels, live=True
+        )  # before : self.cfg.channels[0]
 
     def set_tab_widget(self, tab_widget: QTabWidget):
 
@@ -190,7 +192,7 @@ class Livestream(WidgetBase):
         if self.live_view["start"].text() == "Start Live View":
             self.live_view["start"].setText("Stop Live View")
 
-        ao_voltages_t = generate_waveforms(self.cfg, channel=wavelength[0])
+        ao_voltages_t = generate_waveforms(self.cfg, channels=wavelength)
         self.instrument.ni.ao_task.control(TaskMode.TASK_UNRESERVE)  # Unreserve buffer
         self.instrument.ni.ao_task.out_stream.output_buf_size = len(
             ao_voltages_t[0]
