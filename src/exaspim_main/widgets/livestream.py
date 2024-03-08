@@ -69,7 +69,7 @@ class Livestream(WidgetBase):
             / self.cfg.sensor_row_count,
         ]
 
-        self.instrument._setup_waveform_hardware(self.cfg.channels[0], live=True)
+        self.instrument._setup_waveform_hardware(self.cfg.channels, live=True)  # before : self.cfg.channels[0]
 
     def set_tab_widget(self, tab_widget: QTabWidget):
 

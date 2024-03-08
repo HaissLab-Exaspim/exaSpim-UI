@@ -27,7 +27,7 @@ class SpimLogFilter(logging.Filter):
 class create_UI:
 
     def __init__(self, config_folder=None, simulated=False):
-
+        
         log_level = "INFO"  # ["INFO", "DEBUG"]
         color_console_output = True
 
@@ -37,7 +37,7 @@ class create_UI:
         if simulated:
             config_path = str(Path(config_folder) / "simulated" / "config.toml")
         else:
-            config_path = str(Path(config_folder) / "config.yaml")
+            config_path = str(Path(config_folder) / "config.toml")
 
         # Setup logging.
         # Create log handlers to dispatch:

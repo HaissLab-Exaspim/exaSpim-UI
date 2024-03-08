@@ -84,3 +84,10 @@ Stage:
     Cause- The two vertical stages are usually coupled together, where the F is 'slave' to the Z axis. If the two axes get off from one another too much in their position, the controller will lock them out and flash red indicating an error. You can visually inspect the two risers to roughly check if they are at the same position or not or check the Tiger UI positions tab.
 
     Solution- If one axis is very far off from the other, you can explicitly tell the F axis to move to a certain position using the MOVEREL or MOVE commands. Be very careful here, and ideally detached anything like a XY stage that is attached to both vertical stages. Because if things go awry, this could mechanically damage and torque the XY stage. Alternatively, you could connect the cables from the ZF stages to a different card, like the XY card. In this case you could use the joystick to independently move both risers to the same location. Same caution here, detach anything attached to both vertical stages.
+
+
+## IMPORTANT :
+- [ ] tigerasi  : COM ports to None for simulated mode, otherwise, was COM3 before (but anyway we will have a trinamic thing on watever port we will see at that point)
+    in file : exa-spim-control\exaspim\exaspim.py
+
+- etf electronic tunable focus (something like that)

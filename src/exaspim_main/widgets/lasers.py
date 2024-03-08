@@ -45,7 +45,7 @@ class Lasers(WidgetBase):
         self.tab_widget = None
         self.dials = {}
         self.dial_widgets = {}
-
+    
         self.lasers = self.instrument.lasers
         # for wl, specs in self.cfg.channel_specs.items():
         #     laser_class = type('laser', (object,),
