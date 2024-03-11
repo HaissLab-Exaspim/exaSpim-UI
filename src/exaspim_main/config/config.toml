@@ -61,15 +61,8 @@ simulated = true
 
 [estimates]
 
-[joystick_kwds.axis_map]
-x = 2
-y = 3
-z = 22
-
-[sample_pose_kwds.axis_map]
-x = "y"
-y = "z"
-z = "x"
+[debug]
+plot_waveforms = true
 
 [daq_driver_kwds.ao_channels]
 etl = 0
@@ -84,6 +77,16 @@ galvo_b = 19
 
 [motion_control.driver_kwds]
 com_port = "COM3"
+
+[joystick_kwds.axis_map]
+x = 2
+y = 3
+z = 22
+
+[sample_pose_kwds.axis_map]
+x = "y"
+y = "z"
+z = "x"
 
 [channel_specs.488]
 driver = "exaspim.devices.aotf_laser"
@@ -196,6 +199,3 @@ setpoint = -0.5
 [channel_specs.638.kwds]
 wl = "638"
 cfg = "self.cfg"
-
-[debug]
-plot_waveforms = true
