@@ -12,7 +12,9 @@ from pathlib import Path
 import napari
 
 
-CONFIG_PATH = Path(__file__).parent / "config"
+INSTALL_CONFIG_PATH = Path(__file__).parent / "config"
+USER_CONFIG_PATH = Path().home() / "Documents" / ".exaspim_config"
+# if config file present, user config file has priority
 
 
 class SpimLogFilter(logging.Filter):
@@ -24,20 +26,38 @@ class SpimLogFilter(logging.Filter):
         return record.name.split(".")[0].lower() in self.__class__.VALID_LOGGER_BASES
 
 
+def find_config_file(config_folder=None, simulated=False, file_name="config"):
+    logger = logging.getLogger()
+    allowed_extensions = [".toml", ".yaml"]
+    simulated = "simulated" if simulated else ""
+    if config_folder is not None:
+        choices = [Path(config_folder) / simulated]
+    else:
+        choices = [
+            Path(USER_CONFIG_PATH) / simulated,
+            Path(INSTALL_CONFIG_PATH) / simulated,
+        ]
+
+    tried = []
+    for config_folder in choices:
+        for extension in allowed_extensions:
+            config_path = (config_folder / (file_name + extension)).absolute()
+            if config_path.is_file():
+                logger.info(f"Using the config file {config_path}")
+                return str(config_path)
+            tried.append(str(config_path))
+
+    msg = f"No config file could be found at either of these locations : {tried}"
+    logger.error(msg)
+    raise IOError(msg)
+
+
 class create_UI:
 
     def __init__(self, config_folder=None, simulated=False):
-        
+
         log_level = "INFO"  # ["INFO", "DEBUG"]
         color_console_output = True
-
-        if config_folder is None :
-            config_folder = CONFIG_PATH
-
-        if simulated:
-            config_path = str(Path(config_folder) / "simulated" / "config.toml")
-        else:
-            config_path = str(Path(config_folder) / "config.toml")
 
         # Setup logging.
         # Create log handlers to dispatch:
@@ -62,13 +82,17 @@ class create_UI:
         log_handler.setFormatter(log_formatter)
         logger.addHandler(log_handler)
 
+        config_filepath = find_config_file(
+            config_folder=config_folder, simulated=simulated
+        )
+
         # Windows-based console needs to accept colored logs if running with color.
         if os.name == "nt" and color_console_output:
             kernel32 = ctypes.windll.kernel32
             kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
         self.UI = UserInterface(
-            config_filepath=config_path,
+            config_filepath=config_filepath,
             console_output_level=log_level,
             simulated=simulated,
         )
