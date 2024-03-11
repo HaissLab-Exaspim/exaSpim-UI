@@ -200,7 +200,7 @@ class Livestream(WidgetBase):
         self.instrument.ni.ao_task.control(TaskMode.TASK_COMMIT)
 
         self.instrument.start_livestream(
-            wavelength[0], self.live_view_checks["scouting"].isChecked()
+            wavelength, self.live_view_checks["scouting"].isChecked()
         )
         self.livestream_worker = create_worker(self.instrument._livestream_worker)
         self.livestream_worker.finished.connect(self.stop_livestream)
