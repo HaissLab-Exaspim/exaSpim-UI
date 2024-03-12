@@ -9,15 +9,15 @@ z_step_size_um = 1
 volume_x_um = 10616
 volume_y_um = 7959
 volume_z_um = 64
-laser_wavelengths = [ 405, 488, 561, 638,]
+laser_wavelengths = [ 488,]
 
 [experiment_specs]
 experimenters_name = "Sim Robot"
 immersion_medium = "0.05X SSC"
 immersion_medium_refractive_index = 1.33
-x_anatomical_direction = ""
-y_anatomical_direction = ""
-z_anatomical_direction = ""
+x_anatomical_direction = "Anterior_to_posterior"
+y_anatomical_direction = "Inferior_to_superior"
+z_anatomical_direction = "Left_to_right"
 
 [design_specs]
 slit_width_pixels = 489.0
@@ -68,7 +68,7 @@ plot_waveforms = true
 etl = 0
 camera = 1
 stage = 2
-488 = 3
+488 = 7
 638 = 4
 561 = 13
 405 = 6
@@ -76,7 +76,7 @@ galvo_a = 17
 galvo_b = 19
 
 [motion_control.driver_kwds]
-com_port = "COM3"
+com_port = "COM6"
 
 [joystick_kwds.axis_map]
 x = 2
@@ -94,7 +94,7 @@ module = "AOTFLaser"
 color = "blue"
 hex_color = "#00ff92"
 ao_channel = 3
-ao_voltage = 10.0
+ao_voltage = 2.55
 
 [channel_specs.561]
 driver = "exaspim.devices.aotf_laser"
@@ -124,10 +124,10 @@ ao_voltage = 10.0
 delay_time_s = 0
 
 [channel_specs.488.etl]
-amplitude = 0.105
-offset = 2.494
+amplitude = 2.5126666666666666
+offset = 2.506666666666667
 nonlinear = 0.0
-interp_time_s = 0.5
+interp_time_s = 0.33566666666666667
 buffer_time_s = 0.05
 
 [channel_specs.488.galvo_a]

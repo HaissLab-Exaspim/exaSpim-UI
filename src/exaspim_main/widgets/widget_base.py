@@ -15,6 +15,8 @@ from qtpy.QtWidgets import (
 )
 import qtpy.QtCore as QtCore
 import time
+from logging import getLogger
+import traceback
 
 
 class WidgetBase:
@@ -65,8 +67,10 @@ class WidgetBase:
                     ],
                 )
                 self.viewer.layers[f"Video {layer_num}"].blending = "additive"
-        except Exception:
-            pass
+        except Exception as e:
+            getLogger().warning(
+                f"A grabbed image could not be displayed. Error {e}. Traceback {traceback.format_exc()}"
+            )
 
     def scan(
         self,
