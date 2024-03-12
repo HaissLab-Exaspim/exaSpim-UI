@@ -67,6 +67,8 @@ class WidgetBase:
                     ],
                 )
                 self.viewer.layers[f"Video {layer_num}"].blending = "additive"
+            else:
+                self.viewer.add_image(image, name=f"Video {layer_num}")
         except Exception as e:
             getLogger().warning(
                 f"A grabbed image could not be displayed. Error {e}. Traceback {traceback.format_exc()}"
