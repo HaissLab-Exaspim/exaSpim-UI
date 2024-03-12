@@ -1,6 +1,6 @@
 [imaging_specs]
-local_storage_directory = "D:\\"
-external_storage_directory = "D:\\"
+local_storage_directory = "C:\\data"
+external_storage_directory = "C:\\data"
 subject_id = "sim_test"
 tile_prefix = "tile"
 tile_overlap_x_percent = 15
@@ -9,7 +9,7 @@ z_step_size_um = 1
 volume_x_um = 10616
 volume_y_um = 7959
 volume_z_um = 64
-laser_wavelengths = [ 561,]
+laser_wavelengths = [ 405, 488, 561, 638,]
 
 [experiment_specs]
 experimenters_name = "Sim Robot"
@@ -102,7 +102,7 @@ module = "AOTFLaser"
 color = "yellowgreen"
 hex_color = "#c6ff00"
 ao_channel = 5
-ao_voltage = 2.33
+ao_voltage = 10.0
 
 [channel_specs.405]
 driver = "exaspim.devices.aotf_laser"
