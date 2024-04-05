@@ -94,7 +94,7 @@ module = "AOTFLaser"
 color = "blue"
 hex_color = "#00ff92"
 ao_channel = 3
-ao_voltage = 2.55
+ao_voltage = 0.98
 
 [channel_specs.561]
 driver = "exaspim.devices.aotf_laser"
