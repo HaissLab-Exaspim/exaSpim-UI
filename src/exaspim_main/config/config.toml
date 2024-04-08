@@ -1,6 +1,6 @@
 [imaging_specs]
 local_storage_directory = "C:\\data"
-external_storage_directory = "C:\\data"
+external_storage_directory = "C:\\data2"
 subject_id = "sim_test"
 tile_prefix = "tile"
 tile_overlap_x_percent = 15
@@ -59,6 +59,17 @@ livestream_frequency_hz = 15
 [motion_control]
 simulated = true
 
+[motion_control.axes_description]
+Z = "sample movement axis with encoder for Z stacks (depthwise back and forth in relation with the camera)"
+X = "sample movement axis for initial positionning (lateral from left to right in regard with the camera)"
+T = "sample rotation axis (rotation axis is aligned with earth vertical axis)"
+W = "sample movement axis for Y (verticalwise from top to bottom in relation to the camera) Controling this axis moves both the W (itself) and V axis that is coupled mechanicaly with it."
+V = "identical mechanically from W. This axis must never be controlled indepandantly, use W instead."
+M = "camera movement axis back and forth, to align the camera focal plane with the lightsheet plane (the lightsheet is not moveable in space)"
+Y = "the Y axis is not an axis that exists in tiger controller, but is in fact made up of W axes and V together."
+F = "unused"
+N = "unused"
+
 [estimates]
 
 [debug]
@@ -76,7 +87,7 @@ galvo_a = 17
 galvo_b = 19
 
 [motion_control.driver_kwds]
-com_port = "COM6"
+com_port = "COM4"
 
 [joystick_kwds.axis_map]
 x = 2
