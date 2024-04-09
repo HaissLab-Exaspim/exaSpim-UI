@@ -11,6 +11,7 @@ import ctypes
 from pathlib import Path
 import napari
 
+from spim_core.config_base import Config
 
 INSTALL_CONFIG_PATH = Path(__file__).parent / "config"
 USER_CONFIG_PATH = Path().home() / "Documents" / ".exaspim_config"
@@ -56,7 +57,9 @@ class create_UI:
 
     def __init__(self, config_folder=None, simulated=False):
 
-        log_level = "INFO"  # ["INFO", "DEBUG"]
+        
+
+        log_level = "INFO" # ["INFO", "DEBUG"]
         color_console_output = True
 
         # Setup logging.
@@ -96,6 +99,9 @@ class create_UI:
             console_output_level=log_level,
             simulated=simulated,
         )
+
+        log_level = self.UI.cfg.cfg.debug.loglevel
+        log_handler.setLevel(log_level)
 
 
 def run_ui():

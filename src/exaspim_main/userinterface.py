@@ -56,8 +56,7 @@ class UserInterface:
                 live=self.livestream_widget(),
                 vol=self.volumeteric_acquisition_widget(),
             ),
-            # "stage_slider": self.livestream_parameters.move_stage_widget(),
-            # # TODO : REMEMBER TO UNCOMMENT THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            "stage_slider": self.livestream_parameters.move_stage_widget(),
         }
         main_window.setWidget(
             self.vol_acq_params.create_layout(struct="H", **main_widgets)
@@ -74,8 +73,8 @@ class UserInterface:
         )
 
         # Set up tissue map widget
-        # self.tissue_map_window = self.tissue_map_widget() ,
-        # # TODO : REMEMBER TO UNCOMMENT THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        self.tissue_map_window = self.tissue_map_widget() ,
+       
 
         # Add dockwidgets to viewer
         tabbed_widgets = QTabWidget()  # Creating tab object
@@ -85,13 +84,13 @@ class UserInterface:
             tabbed_widgets
         )  # Generate laser wl tabs
 
-        # tabbed_widgets.addTab( , # TODO : REMEMBER TO UNCOMMENT THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        #    self.tissue_map_window, "Tissue Map"
-        # )  # Adding tissue map tab
+        tabbed_widgets.addTab( 
+           self.tissue_map_window, "Tissue Map"
+        )  # Adding tissue map tab
 
-        # self.tissue_map.set_tab_widget(  # TODO : REMEMBER TO UNCOMMENT THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        #     tabbed_widgets
-        # )  # Passing in tab widget to tissue map
+        self.tissue_map.set_tab_widget( 
+            tabbed_widgets
+        )  # Passing in tab widget to tissue map
 
         self.livestream_parameters.set_tab_widget(
             tabbed_widgets
