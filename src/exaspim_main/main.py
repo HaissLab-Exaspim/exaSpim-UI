@@ -57,9 +57,7 @@ class create_UI:
 
     def __init__(self, config_folder=None, simulated=False):
 
-        
-
-        log_level = "INFO" # ["INFO", "DEBUG"]
+        log_level = "DEBUG" # ["INFO", "DEBUG"]
         color_console_output = True
 
         # Setup logging.
