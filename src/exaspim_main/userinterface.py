@@ -73,7 +73,7 @@ class UserInterface:
         )
 
         # Set up tissue map widget
-        self.tissue_map_window = self.tissue_map_widget() ,
+        self.tissue_map_window = self.tissue_map_widget()
        
 
         # Add dockwidgets to viewer

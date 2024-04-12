@@ -295,6 +295,7 @@ class Livestream(WidgetBase):
 
         directions = ["x", "y", "z", "n"]
         self.stage_position = self.instrument.sample_pose.get_position()
+        self.log.debug(f"Stage positions {self.stage_position}")
         self.stage_position["n"] = self.instrument.tigerbox.get_position("n")["N"]
 
         # Create X, Y, Z labels and displays for where stage is

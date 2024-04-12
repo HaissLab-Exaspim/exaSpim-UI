@@ -98,7 +98,7 @@ class create_UI:
             simulated=simulated,
         )
 
-        log_level = self.UI.cfg.cfg.debug.loglevel
+        log_level = self.UI.cfg.cfg["debug"]["loglevel"]
         log_handler.setLevel(log_level)
 
 
