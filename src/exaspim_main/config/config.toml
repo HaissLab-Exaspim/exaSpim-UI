@@ -10,14 +10,15 @@ volume_x_um = 10616
 volume_y_um = 7959
 volume_z_um = 64
 laser_wavelengths = [ 488,]
+# IN CASE THERE IS A BUG WITH NI CARD AT UI STARTUP, REMOVE ALL LASER WAVELENGTH BUT ONE ON THE LINE ABOVE
 
 [experiment_specs]
 experimenters_name = "Sim Robot"
 immersion_medium = "0.05X SSC"
 immersion_medium_refractive_index = 1.33
-x_anatomical_direction = ""
-y_anatomical_direction = ""
-z_anatomical_direction = ""
+x_anatomical_direction = "Anterior_to_posterior"
+y_anatomical_direction = "Inferior_to_superior"
+z_anatomical_direction = "Left_to_right"
 
 [design_specs]
 slit_width_pixels = 489.0
@@ -56,42 +57,8 @@ dev_name = "Dev1"
 samples_per_sec = 10000.0
 livestream_frequency_hz = 15
 
-[motion_control.driver_kwds]
-com_port = "COM4"
-
 [motion_control]
 simulated = false
-
-[motion_control.axes_description]
-X = "sample movement axis for initial positionning (lateral from left to right in regard with the camera)"
-T = "sample rotation axis (rotation axis is aligned with earth vertical axis)"
-Z = "sample movement axis with encoder for Z stacks (depthwise back and forth in relation with the camera)"
-F = "unused"
-M = "camera movement axis back and forth, to align the camera focal plane with the lightsheet plane (the lightsheet is not moveable in space)"
-N = "unused"
-V = "sample movement axis for Y (verticalwise from top to bottom in relation to the camera) Controling this axis moves both the V (itself) and W axis that is coupled mechanicaly with it."
-W = "identical mechanically from V. This axis must never be controlled indepandantly, use V instead."
-Y = "the Y axis is not an axis that exists in tiger controller, but is in fact made up of W axes and V together."
-
-[motion_control.axis_map]
-# value in the reference frame to correspunding in value in the motor frame
-x = "X"
-y = "V"
-z = "Z"
-
-[joystick_kwds.axis_map]
-x = 2
-y = 3
-z = 22
-
-[sample_pose_kwds.axis_map]
-# value in the sample frame to correspunding in the reference frame
-# x = "y"
-# y = "z"
-# z = "x"
-x = "x"
-y = "v"
-z = "z"
 
 [estimates]
 
@@ -110,6 +77,35 @@ stage = 2
 galvo_a = 17
 galvo_b = 19
 
+[motion_control.driver_kwds]
+com_port = "COM4"
+
+[motion_control.axes_description]
+X = "sample movement axis for initial positionning (lateral from left to right in regard with the camera)"
+T = "sample rotation axis (rotation axis is aligned with earth vertical axis)"
+Z = "sample movement axis with encoder for Z stacks (depthwise back and forth in relation with the camera)"
+F = "unused"
+M = "camera movement axis back and forth, to align the camera focal plane with the lightsheet plane (the lightsheet is not moveable in space)"
+N = "unused"
+V = "sample movement axis for Y (verticalwise from top to bottom in relation to the camera) Controling this axis moves both the V (itself) and W axis that is coupled mechanicaly with it."
+W = "identical mechanically from V. This axis must never be controlled indepandantly, use V instead."
+Y = "the Y axis is not an axis that exists in tiger controller, but is in fact made up of W axes and V together."
+
+[motion_control.axis_map]
+x = "X"
+y = "V"
+z = "Z"
+
+[joystick_kwds.axis_map]
+x = 2
+y = 3
+z = 22
+
+[sample_pose_kwds.axis_map]
+x = "x"
+y = "v"
+z = "z"
+
 [channel_specs.488]
 driver = "exaspim.devices.aotf_laser"
 module = "AOTFLaser"
@@ -117,6 +113,7 @@ color = "blue"
 hex_color = "#00ff92"
 ao_channel = 3
 ao_voltage = 0.98
+binning = 1
 
 [channel_specs.561]
 driver = "exaspim.devices.aotf_laser"
@@ -125,6 +122,7 @@ color = "yellowgreen"
 hex_color = "#c6ff00"
 ao_channel = 5
 ao_voltage = 10.0
+binning = 1
 
 [channel_specs.405]
 driver = "exaspim.devices.aotf_laser"
@@ -133,6 +131,7 @@ color = "purple"
 hex_color = "#000000"
 ao_channel = 6
 ao_voltage = 10.0
+binning = 1
 
 [channel_specs.638]
 driver = "exaspim.devices.aotf_laser"
