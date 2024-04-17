@@ -207,12 +207,12 @@ class VolumetericAcquisition(WidgetBase):
                 if self.instrument.frame_index != 0
                 else pct
             )
-            with self.instrument.gpu_down_sample_lock:
-                QtCore.QMetaObject.invokeMethod(
-                    self.progress["bar"],
-                    "setValue",
-                    QtCore.Q_ARG(int, round(pct * 100)),
-                )
+            #with self.instrument.gpu_down_sample_lock:
+            QtCore.QMetaObject.invokeMethod(
+                self.progress["bar"],
+                "setValue",
+                QtCore.Q_ARG(int, round(pct * 100)),
+            )
                 # Qt threads are so weird. Can't invoke repaint method outside of main thread,
                 # and Qthreads don't play nice with napari threads,
                 # so QMetaObject is static read-only instances. Use with gpu_down_sample_lock to

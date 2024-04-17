@@ -23,8 +23,8 @@ from time import sleep
 import logging
 from nidaqmx.constants import TaskMode, FrequencyUnits, Level
 from exaspim.operations.waveform_generator import generate_waveforms
-import time
-
+from datetime import datetime
+from pathlib import Path
 
 class Livestream(WidgetBase):
 
@@ -408,7 +408,10 @@ class Livestream(WidgetBase):
         if self.viewer.layers != []:
             screenshot = self.viewer.screenshot()
             self.viewer.add_image(screenshot)
-            imsave("screenshot.png", screenshot)
+            time_string = datetime.now().strftime("D#%Y-%m-%dT#%H-%M-%S")
+            file_path = Path(self.cfg["imaging_specs"]["screenshot_directory"])
+            file_path.mkdir(exist_ok=True)
+            imsave(str(file_path / f"screenshot_{time_string}.png"), screenshot)
         else:
             self.error_msg("Screenshot", "No image to screenshot")
 

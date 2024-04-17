@@ -1,6 +1,7 @@
 [imaging_specs]
 local_storage_directory = "C:\\data"
 external_storage_directory = "C:\\data2"
+screenshot_directory = "C:\\Users\\lab-user\\Documents\\exaspim_screenshots"
 subject_id = "sim_test"
 tile_prefix = "tile"
 tile_overlap_x_percent = 15
@@ -10,6 +11,8 @@ volume_x_um = 10616
 volume_y_um = 7959
 volume_z_um = 64
 laser_wavelengths = [ 488,]
+
+
 # IN CASE THERE IS A BUG WITH NI CARD AT UI STARTUP, REMOVE ALL LASER WAVELENGTH BUT ONE ON THE LINE ABOVE
 
 [experiment_specs]
@@ -161,6 +164,9 @@ setpoint = -0.5
 wl = "488"
 cfg = "self.cfg"
 
+[channel_specs.488.focus]
+position = -3218
+
 [channel_specs.561.camera]
 delay_time_s = 0
 
@@ -180,6 +186,9 @@ setpoint = 0
 [channel_specs.561.kwds]
 wl = "561"
 cfg = "self.cfg"
+
+[channel_specs.561.focus]
+position = -3218
 
 [channel_specs.405.camera]
 delay_time_s = 0
@@ -201,6 +210,9 @@ setpoint = -0.5
 wl = "405"
 cfg = "self.cfg"
 
+[channel_specs.405.focus]
+position = -3218
+
 [channel_specs.638.camera]
 delay_time_s = 0
 
@@ -220,3 +232,6 @@ setpoint = -0.5
 [channel_specs.638.kwds]
 wl = "638"
 cfg = "self.cfg"
+
+[channel_specs.638.focus]
+position = -3218
