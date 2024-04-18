@@ -117,6 +117,7 @@ hex_color = "#00ff92"
 ao_channel = 3
 ao_voltage = 0.98
 binning = 1
+focus_position = -1000
 
 [channel_specs.561]
 driver = "exaspim.devices.aotf_laser"
@@ -126,6 +127,7 @@ hex_color = "#c6ff00"
 ao_channel = 5
 ao_voltage = 10.0
 binning = 1
+focus_position = -1000
 
 [channel_specs.405]
 driver = "exaspim.devices.aotf_laser"
@@ -135,6 +137,7 @@ hex_color = "#000000"
 ao_channel = 6
 ao_voltage = 10.0
 binning = 1
+focus_position = -1000
 
 [channel_specs.638]
 driver = "exaspim.devices.aotf_laser"
@@ -143,6 +146,8 @@ color = "red"
 hex_color = "#000000"
 ao_channel = 4
 ao_voltage = 10.0
+binning = 1
+focus_position = -1000
 
 [channel_specs.488.camera]
 delay_time_s = 0
