@@ -12,9 +12,6 @@ volume_y_um = 7959
 volume_z_um = 64
 laser_wavelengths = [ 488,]
 
-
-# IN CASE THERE IS A BUG WITH NI CARD AT UI STARTUP, REMOVE ALL LASER WAVELENGTH BUT ONE ON THE LINE ABOVE
-
 [experiment_specs]
 experimenters_name = "Sim Robot"
 immersion_medium = "0.05X SSC"
@@ -94,20 +91,20 @@ V = "sample movement axis for Y (verticalwise from top to bottom in relation to 
 W = "identical mechanically from V. This axis must never be controlled indepandantly, use V instead."
 Y = "the Y axis is not an axis that exists in tiger controller, but is in fact made up of W axes and V together."
 
-[motion_control.axis_map]
-x = "X"
-y = "V"
-z = "Z"
-
-[joystick_kwds.axis_map]
+[joystick.axis_map]
 x = 2
 y = 3
 z = 22
+r = 23
 
-[sample_pose_kwds.axis_map]
+[sample_pose.axis_map]
 x = "x"
 y = "v"
 z = "z"
+r = "t"
+
+[camera_pose.axis_map]
+c = "m"
 
 [channel_specs.488]
 driver = "exaspim.devices.aotf_laser"
