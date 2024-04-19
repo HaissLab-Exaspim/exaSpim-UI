@@ -101,6 +101,8 @@ r = 23
 x = "x"
 y = "v"
 z = "z"
+
+[rotary_pose.axis_map]
 r = "t"
 
 [camera_pose.axis_map]
