@@ -20,14 +20,18 @@ from stl.mesh import Mesh
 # import tifffile unused import
 # import blend_modes unused import
 from pathlib import Path
-
+from typing import TYPE_CHECKING
 
 BIN_PATH = Path(__file__).parent.parent / "bin"
+
+if TYPE_CHECKING :
+    from exaspim.exaspim import Exaspim
+
 
 
 class TissueMap(WidgetBase):
 
-    def __init__(self, instrument, viewer):
+    def __init__(self, instrument : "Exaspim", viewer):
 
         self.x_axis = None
         self.y_axis = None
@@ -50,7 +54,7 @@ class TissueMap(WidgetBase):
             self.cfg.volume_y_um,
             self.cfg.volume_z_um,
         ]
-        self.sample_pose_remap = self.cfg.sample_pose["axis_map"]
+        self.sample_pose_remap = self.cfg.get_sample_pose_mapping(upper=False)
         self.og_axis_remap = {v: k for k, v in self.sample_pose_remap.items()}
         self.tiles = []  # Tile in sample pose coords
         self.grid_step_um = {}  # Grid steps in samplepose coords

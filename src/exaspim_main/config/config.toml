@@ -20,6 +20,10 @@ x_anatomical_direction = "Anterior_to_posterior"
 y_anatomical_direction = "Inferior_to_superior"
 z_anatomical_direction = "Left_to_right"
 
+[debug]
+loglevel = "DEBUG"
+plot_waveforms = true
+
 [design_specs]
 slit_width_pixels = 489.0
 
@@ -57,15 +61,6 @@ dev_name = "Dev1"
 samples_per_sec = 10000.0
 livestream_frequency_hz = 15
 
-[motion_control]
-simulated = false
-
-[estimates]
-
-[debug]
-loglevel = "DEBUG"
-plot_waveforms = true
-
 [daq_driver_kwds.ao_channels]
 etl = 0
 camera = 1
@@ -77,36 +72,45 @@ stage = 2
 galvo_a = 17
 galvo_b = 19
 
+[estimates]
+
+[motion_control]
+simulated = false
+
 [motion_control.driver_kwds]
 com_port = "COM4"
 
-[motion_control.axes_description]
-X = "sample movement axis for initial positionning (lateral from left to right in regard with the camera)"
-T = "sample rotation axis (rotation axis is aligned with earth vertical axis)"
-Z = "sample movement axis with encoder for Z stacks (depthwise back and forth in relation with the camera)"
-F = "unused"
-M = "camera movement axis back and forth, to align the camera focal plane with the lightsheet plane (the lightsheet is not moveable in space)"
-N = "unused"
-V = "sample movement axis for Y (verticalwise from top to bottom in relation to the camera) Controling this axis moves both the V (itself) and W axis that is coupled mechanicaly with it."
-W = "identical mechanically from V. This axis must never be controlled indepandantly, use V instead."
-Y = "the Y axis is not an axis that exists in tiger controller, but is in fact made up of W axes and V together."
-
-[joystick.axis_map]
+[axis_maps.joystick]
 x = 2
 y = 3
 z = 22
 r = 23
 
-[sample_pose.axis_map]
+[axis_maps.poses.sample]
 x = "x"
 y = "v"
 z = "z"
 
-[rotary_pose.axis_map]
+[axis_maps.poses.rotary]
 r = "t"
 
-[camera_pose.axis_map]
+[axis_maps.poses.camera]
 c = "m"
+
+[axis_maps]
+forbidden_control = ["w"]
+
+[axis_maps.axes_description]
+x = "sample movement axis for initial positionning (lateral from left to right in regard with the camera)"
+t = "sample rotation axis (rotation axis is aligned with earth vertical axis)"
+z = "sample movement axis with encoder for Z stacks (depthwise back and forth in relation with the camera)"
+f = "unused"
+m = "camera movement axis back and forth, to align the camera focal plane with the lightsheet plane (the lightsheet is not moveable in space)"
+n = "unused"
+v = "sample movement axis for Y (verticalwise from top to bottom in relation to the camera) Controling this axis moves both the V (itself) and W axis that is coupled mechanicaly with it."
+w = "identical mechanically from V. This axis must never be controlled indepandantly, use V instead."
+y = "the Y axis is not an axis that exists in tiger controller, but is in fact made up of W axes and V together."
+
 
 [channel_specs.488]
 driver = "exaspim.devices.aotf_laser"
