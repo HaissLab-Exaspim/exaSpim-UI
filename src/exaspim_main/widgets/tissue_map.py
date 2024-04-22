@@ -54,7 +54,7 @@ class TissueMap(WidgetBase):
             self.cfg.volume_y_um,
             self.cfg.volume_z_um,
         ]
-        self.sample_pose_remap = self.cfg.get_sample_pose_mapping(upper=False)
+        self.sample_pose_remap = self.cfg.get_sample_pose_mapping(uppercase=False)
         self.og_axis_remap = {v: k for k, v in self.sample_pose_remap.items()}
         self.tiles = []  # Tile in sample pose coords
         self.grid_step_um = {}  # Grid steps in samplepose coords

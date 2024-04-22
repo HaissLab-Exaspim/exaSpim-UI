@@ -20,6 +20,12 @@ import cv2
 import os
 from pathlib import Path
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING :
+    from exaspim.exaspim import Exaspim
+    from exaspim.exaspim_config import ExaspimConfig
+
 
 BIN_PATH = Path(__file__).parent.parent / "bin"
 
@@ -34,7 +40,7 @@ def get_dict_attr(class_def, attr):
 
 class InstrumentParameters(WidgetBase):
 
-    def __init__(self, simulated, instrument, config):
+    def __init__(self, simulated, instrument : "Exaspim", config : "ExaspimConfig"):
 
         self.simulated = simulated
         self.instrument = instrument
@@ -119,7 +125,7 @@ class InstrumentParameters(WidgetBase):
         tiger_axes = [
             k
             for k, v in self.instrument.tigerbox.get_joystick_axis_mapping().items()
-            if v == JoystickInput.NONE
+            if v == JoystickInput.NONE and k.upper() not in self.cfg.get_forbidden_ctl_axes(uppercase=True) 
         ]
         tiger_axes.append("NONE")
 

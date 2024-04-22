@@ -29,10 +29,16 @@ import calendar
 import os
 from nidaqmx.constants import TaskMode
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING :
+    from exaspim.exaspim_config import ExaspimConfig
+    from exaspim.exaspim import Exaspim
+
 
 class VolumetericAcquisition(WidgetBase):
 
-    def __init__(self, viewer, cfg, instrument, simulated):
+    def __init__(self, viewer, cfg : "ExaspimConfig", instrument : "Exaspim", simulated):
         """
         :param viewer: napari viewer
         :param cfg: config object from instrument
@@ -299,7 +305,7 @@ class VolumetericAcquisition(WidgetBase):
         """Update graph with new waveforms"""
         # TODO: hardcoding as channels[0] for now -> no longer interleaving neeed to fix later
         voltages_t = generate_waveforms(
-            self.cfg, channel=self.cfg.channels[0]
+            self.cfg, channels=self.cfg.channels, save = self.cfg.save_waveforms, plot = self.cfg.plot_waveforms
         )  # Generate waveforms based on cfg
         t = np.linspace(
             0,

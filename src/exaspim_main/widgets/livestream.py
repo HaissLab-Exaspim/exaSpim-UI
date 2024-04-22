@@ -25,10 +25,15 @@ from nidaqmx.constants import TaskMode, FrequencyUnits, Level
 from exaspim.operations.waveform_generator import generate_waveforms
 from datetime import datetime
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING :
+    from exaspim.exaspim import Exaspim
+    from exaspim.exaspim_config import ExaspimConfig
 
 class Livestream(WidgetBase):
 
-    def __init__(self, viewer, cfg, instrument, simulated: bool):
+    def __init__(self, viewer, cfg : "ExaspimConfig", instrument : "Exaspim", simulated: bool):
         """
         :param viewer: napari viewer
         :param cfg: config object from instrument
@@ -192,13 +197,16 @@ class Livestream(WidgetBase):
         if self.live_view["start"].text() == "Start Live View":
             self.live_view["start"].setText("Stop Live View")
 
-        ao_voltages_t = generate_waveforms(self.cfg, channels=wavelength)
+        ao_voltages_t = generate_waveforms(self.cfg, 
+                                           channels=wavelength, 
+                                           save = self.cfg.save_waveforms, 
+                                           plot = self.cfg.plot_waveforms)
         self.instrument.ni.ao_task.control(TaskMode.TASK_UNRESERVE)  # Unreserve buffer
         self.instrument.ni.ao_task.out_stream.output_buf_size = len(
             ao_voltages_t[0]
         )  # Sets buffer to length of voltages
         self.instrument.ni.ao_task.control(TaskMode.TASK_COMMIT)
-
+        
         self.instrument.start_livestream(
             wavelength, self.live_view_checks["scouting"].isChecked()
         )
@@ -531,7 +539,7 @@ class Livestream(WidgetBase):
         """Update position of slider if stage halted. Location will be sample pose"""
 
         if type(location) == bool:  # if location is bool, then halt button was pressed
-            if self.move_stage_worker is None:
+            if self.move_stage_worker is not None:
                 self.move_stage_worker.quit()
             location = self.instrument.sample_pose.get_position()
         self.move_stage_textbox(int(location["y"] / 10))
