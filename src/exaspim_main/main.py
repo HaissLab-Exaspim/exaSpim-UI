@@ -1,7 +1,10 @@
 """Create exaspim UI"""
 
+from os import environ, name as osname
+
+environ['PYOPENCL_COMPILER_OUTPUT'] = '1'
+
 import argparse
-import os
 from .userinterface import UserInterface
 from coloredlogs import ColoredFormatter
 import traceback
@@ -10,6 +13,8 @@ import sys
 import ctypes
 from pathlib import Path
 import napari
+
+
 
 from spim_core.config_base import Config
 
@@ -88,7 +93,7 @@ class create_UI:
         )
 
         # Windows-based console needs to accept colored logs if running with color.
-        if os.name == "nt" and color_console_output:
+        if osname == "nt" and color_console_output:
             kernel32 = ctypes.windll.kernel32
             kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
