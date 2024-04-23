@@ -30,7 +30,7 @@ slit_width_pixels = 489.0
 
 [waveform_specs]
 ttl_pulse_time_s = 0.01
-frame_rest_time_s = 0.05
+frame_rest_time_s = 0.75
 
 [compressor_specs]
 image_stack_chunk_size = 64
