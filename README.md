@@ -2,7 +2,7 @@
 Developped at AllenBrainInstitute by Adam Glaser and Micah Woodard. THis is a simple Fork for pasteur's implementation following their open source published material.
 Their original archrive publication is available here : https://www.biorxiv.org/content/10.1101/2023.06.08.544277v3
 
-## List of fixes from the original Exapsim codebase
+## List of fixes to adapt the original Exaspim codebase
 These small fixes were necessary to adapt our specific motor config, and make the acquisitions possible.
 
 - Adapting the axes movements to arbitrary axes configuration with the Pose classes : (removing away hardcoded axes names)
