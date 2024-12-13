@@ -91,3 +91,10 @@ Stage:
     in file : exa-spim-control\exaspim\exaspim.py
 
 - etf electronic tunable focus (something like that)
+
+
+Documentation of how to tune the TigerASI stages  
+- https://asiimaging.com/docs/stage_accuracy_settling_time_for_asi_stage#tuning_stages_to_minimize_move_time
+
+Documentation of how to use TigerASI commands
+- https://asiimaging.com/docs/products/tiger
