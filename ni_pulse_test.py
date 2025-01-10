@@ -104,6 +104,9 @@ class NI:
                 # TODO :hard coded, need to make this config dependant
                 min_val = -1
                 max_val = 10
+            elif any([laser in channel_name for laser in ["488","561","640", "405"]]): 
+                min_val = 0
+                max_val = 10
             else :
                 min_val = -0.01 # safeguard for 0 to 5V values to AO channels
                 max_val = 5.1
