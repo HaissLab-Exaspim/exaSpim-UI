@@ -98,3 +98,10 @@ Documentation of how to tune the TigerASI stages
 
 Documentation of how to use TigerASI commands
 - https://asiimaging.com/docs/products/tiger
+
+Documentation of the Custom Commands 
+(example : for switching the z axis to linear / rotary encoders )
+- https://asiimaging.com/docs/products/serial_commands#commandcustoma_cca
+
+Documentation of the settling time and accuracy for axes movements (dependant on PID tuning and other settings)
+- https://asiimaging.com/docs/stage_accuracy_settling_time_for_asi_stage
