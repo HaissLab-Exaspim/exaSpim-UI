@@ -6,19 +6,19 @@ subject_id = "sim_test"
 tile_prefix = "tile"
 tile_overlap_x_percent = 15
 tile_overlap_y_percent = 10
-z_step_size_um = 100
+z_step_size_um = 5
 volume_x_um = 10615
 volume_y_um = 7958
 volume_z_um = 3000
-laser_wavelengths = [ 488, 638,]
+laser_wavelengths = [ 488,]
 
 [experiment_specs]
 experimenters_name = "Sim Robot"
 immersion_medium = "0.05X SSC"
 immersion_medium_refractive_index = 1.33
-x_anatomical_direction = ""
-y_anatomical_direction = ""
-z_anatomical_direction = ""
+x_anatomical_direction = "Other"
+y_anatomical_direction = "Other"
+z_anatomical_direction = "Other"
 
 [debug]
 loglevel = "DEBUG"
@@ -108,7 +108,7 @@ module = "AOTFLaser"
 color = "blue"
 hex_color = "#00ff92"
 ao_channel = 3
-ao_voltage = 0.26
+ao_voltage = 10.0
 binning = 1
 focus_position = -1000
 
@@ -128,7 +128,7 @@ module = "AOTFLaser"
 color = "purple"
 hex_color = "#000000"
 ao_channel = 6
-ao_voltage = 10.0
+ao_voltage = 0.25
 binning = 1
 focus_position = -1000
 
@@ -157,8 +157,8 @@ c = "m"
 delay_time_s = 0
 
 [channel_specs.488.etl]
-amplitude = 2.5126666666666666
-offset = 2.506666666666667
+amplitude = 2.5
+offset = 5
 nonlinear = 0.0
 interp_time_s = 0.33566666666666667
 buffer_time_s = 0.05

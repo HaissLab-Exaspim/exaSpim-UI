@@ -90,7 +90,7 @@ Stage:
 - [ ] tigerasi  : COM ports to None for simulated mode, otherwise, was COM3 before (but anyway we will have a trinamic thing on watever port we will see at that point)
     in file : exa-spim-control\exaspim\exaspim.py
 
-- etf electronic tunable focus (something like that)
+- etf electronic tunable focus (something like that)    
 
 
 Documentation of how to tune the TigerASI stages  
